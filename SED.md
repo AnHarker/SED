@@ -1,43 +1,43 @@
 ###SED
->&emsp;用法：
-&emsp;&emsp;sed[option]... 'script' inputfile...
-&emsp;常用选项：
-&emsp;&emsp;-n&emsp;不输出模式空间内容到屏幕，即不自动打印
-&emsp;&emsp;-e&emsp;多点编辑
-&emsp;&emsp;-f /PATH/SCRIPT_FILE&emsp;从指定文件中读取编辑脚本
-&emsp;&emsp;-r&emsp;支持使用扩展正则表达式
-&emsp;&emsp;-i.bak&emsp;备份文件并原处编辑
-&emsp;&emsp;nl&emsp;显示行号
-&emsp;script:
-&emsp;&emsp;'地址命令'
+>用法：
+sed[option]... 'script' inputfile...
+常用选项：
+-n不输出模式空间内容到屏幕，即不自动打印
+-e多点编辑
+-f /PATH/SCRIPT_FILE从指定文件中读取编辑脚本
+-r支持使用扩展正则表达式
+-i.bak备份文件并原处编辑
+nl显示行号
+script:
+'地址命令'
 地址定界：
-&emsp;不给地址：对全文进行处理
-&emsp;单地址：
-&emsp;&emsp;&emsp;#: 指定的行，$：最后一行
-&emsp;&emsp;&emsp;/pattern/：被此处模式所能够匹配到的每一行
-&emsp;地址范围：
-&emsp;&emsp;&emsp;#,#
-&emsp;&emsp;&emsp;#,+#
-&emsp;&emsp;&emsp;/pat1/,/pat2/
-&emsp;&emsp;&emsp;#,/pat1/
-&emsp; ~：步进
-&emsp;&emsp;&emsp;1~2 奇数行
-&emsp;&emsp;&emsp;2~2 偶数行
+不给地址：对全文进行处理
+单地址：
+#: 指定的行，$：最后一行
+/pattern/：被此处模式所能够匹配到的每一行
+地址范围：
+#,#
+#,+#
+/pat1/,/pat2/
+#,/pat1/
+ ~：步进
+1~2 奇数行
+2~2 偶数行
 编辑命令：
-&emsp;&emsp;d&emsp;删除模式空间匹配的行，并立即启用下一轮循环
-&emsp;&emsp;p&emsp;打印当前模式空间内容，追加到默认输出之后
-&emsp;&emsp;a [\]text&emsp;在指定行后面追加文本，支持使用\n实现多行追加
-&emsp;&emsp;i[\]text&emsp;在行前面插入文本
-&emsp;&emsp;c [\]tex&emsp;t替换行为单行或多行文本
-&emsp;&emsp;w /path/file&emsp;保存模式匹配的行至指定文件
-&emsp;&emsp;r /path/file&emsp;读取指定文件的文本至模式空间中匹配到的行后
-&emsp;&emsp;=&emsp;为模式空间中的行打印行号
-&emsp;&emsp;!&emsp;模式空间中匹配行取反处理
-&emsp;s///&emsp;查找替换,支持使用其它分隔符，s@@@，s###
-&emsp;替换标记：
-&emsp;&emsp;g行内全局替换
-&emsp;&emsp;&emsp;p显示替换成功的行
-&emsp;&emsp;&emsp;w /PATH/FILE&emsp;将替换成功的行保存至文件中
+d删除模式空间匹配的行，并立即启用下一轮循环
+p打印当前模式空间内容，追加到默认输出之后
+a [\]text在指定行后面追加文本，支持使用\n实现多行追加
+i[\]text在行前面插入文本
+c [\]text替换行为单行或多行文本
+w /path/file保存模式匹配的行至指定文件
+r /path/file读取指定文件的文本至模式空间中匹配到的行后
+=为模式空间中的行打印行号
+!模式空间中匹配行取反处理
+s///查找替换,支持使用其它分隔符，s@@@，s###
+替换标记：
+g行内全局替换
+p显示替换成功的行
+w /PATH/FILE将替换成功的行保存至文件中
 
 高级编辑命令
 >- P：打印模式空间开端至\n内容，并追加到默认输出之前
